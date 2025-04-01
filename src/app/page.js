@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main>
       <ThemeToggle />
-      <ul>
+      <ul className="grid bg-white p-4 rounded-2xl shadow-2xl  dark:bg-gray-800">
         {data.map((item, i) => (
           <Card key={i} {...item} />
         ))}
@@ -33,14 +33,15 @@ export default function Home() {
 
 function Card({ title, category }) {
   return (
-    <li>
-      <a href="#0">
+    <li className=".max-w-[400px] w-[400] p-4 rounded-xl group hover:bg-slate-100 dark:hover:bg-gray-600">
+      <a href="#0" className="flex gap-4 items-center">
         <div className="aspect-square w-10 rounded-md bg-[#cbd5e1]"></div>
-        <div>
-          <p>{title}</p>
+        <div className="dark:text-white">
+          <p className="font-semibold">{title}</p>
           <small>{category}</small>
         </div>
         <svg
+          className="hidden text-purple-600 dark:text-purple-400 group-hover:block ml-auto "
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
